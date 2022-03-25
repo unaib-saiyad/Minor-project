@@ -88,7 +88,7 @@
               <img src='{{i.image.url}}' class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">{{i.product_name}}</h5>
-                <p class="card-text">{{i.desc}}</p>
+                <p class="card-text">{{i.desc|slice:"0:20"}}</p>
                 <button onclick="productView('{{i.product_id}}')" class="btn btn-primary">Buy Now</button>
               </div>
             </div>
