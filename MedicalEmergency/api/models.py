@@ -11,7 +11,7 @@ class UserInfo(models.Model):
     user = models.OneToOneField(User, blank=False, null=False, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50, blank=False, null=False)
     address = models.CharField(max_length=200, blank=False, null=False)
-    mobile = models.PositiveIntegerField(blank=False, null=False)
+    mobile = models.CharField(max_length=100, blank=False, null=False)
 
     def __str__(self):
         return f"{self.user.username}"
