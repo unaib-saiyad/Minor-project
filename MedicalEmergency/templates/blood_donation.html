@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blood-Donation{% endblock %}
+
+{% block body %}
+
+<!-- Page Heading -->
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Blood Donation</h1>
+    <a href="index.html" class="d-none d-sm-inline-block btn btn-secondary shadow-sm"><i
+            class="fas fa-arrow-left fa-sm text-white-50"></i> Go back</a>
+</div>
+
+<!-- Content Row -->
+<form action="{% url 'api:blood-donation' %}" method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="inputname4">Full-Name</label>
+        <input name="name" type="text" class="form-control" id="inputname4" placeholder="name">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputMobile">Mobile</label>
+            <input name="mobile" type="number" class="form-control" id="inputMobile">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputBlood">Blood-group</label>
+            <select name="blood_group" id="inputBlood" class="form-control">
+              <option value="A+" selected>A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+          </div>
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">Address</label>
+        <input name="address" type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputCity">City</label>
+            <input name="city" type="text" class="form-control" id="inputCity">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="inputState">State</label>
+            <input name="state" type="text" class="form-control" id="inputState">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="inputZip">Pin</label>
+            <input name="pin" type="text" class="form-control" id="inputZip">
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
